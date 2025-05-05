@@ -15,17 +15,40 @@
 <body>
     <main>
         <h1>Developing a Simple Synthesizer</h1>
-        <keyboard>
-            <key freq="" kbd="">A</key>
-            <key freq="" kbd="">S</key>
-            <key freq="" kbd="">D</key>
-            <key freq="" kbd="">F</key>
-            <key freq="" kbd="">G</key>
-            <key freq="" kbd="">H</key>
-            <key freq="" kbd="">J</key>
-            <key freq="" kbd="">K</key>
-            <key freq="" kbd="">L</key>
-        </keyboard>
+        <div class="keyboard">
+            <button class="key" data-freq="261.63" data-keycode="65">
+                <span>A</span>
+                <span>C4</span>
+            </button>
+            <button class="key" data-freq="293.66" data-keycode="83">
+                <span>S</span>
+                <span>D4</span>
+            </button>
+            <button class="key" data-freq="329.63" data-keycode="68">
+                <span>D</span>
+                <span>E4</span>
+            </button>
+            <button class="key" data-freq="349.23" data-keycode="70">
+                <span>F</span>
+                <span>F4</span>
+            </button>
+            <button class="key" data-freq="391.99" data-keycode="71">
+                <span>G</span>
+                <span>G4</span>
+            </button>
+            <button class="key" data-freq="440.00" data-keycode="72">
+                <span>H</span>
+                <span>A4</span>
+            </button>
+            <button class="key" data-freq="493.88" data-keycode="74">
+                <span>J</span>
+                <span>B4</span>
+            </button>
+            <button class="key" data-freq="523.25" data-keycode="75">
+                <span>K</span>
+                <span>C5</span>
+            </button>
+        </div>
     </main>
     <script type="module" src="/src/index.ts"></script>
 </body>

@@ -1,94 +1,132 @@
-/* This is a standard CSS Reset with some of my own preferences */
+@layer reset, base, components;
 
-/* Box sizing border-box for all elements */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+
+@layer reset {
+  /* Box sizing border-box for all elements */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Remove default margin and padding */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove list styles (bullets/numbers) */
+  ul,
+  ol,
+  menu,
+  * li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /*
+    - Remove default hyperlink styles
+    - Inherit font styles for consistency
+  */
+  a {
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+  }
+
+  /* 
+    - Remove default outline styles 
+    - Inherit font styles for consistency
+  */
+  button,
+  input,
+  textarea,
+  select {
+    outline: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Set the default button behavior */
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+  }
+
 }
 
-/* Remove default margin and padding */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
-  padding: 0;
-}
-
-/* Remove list styles (bullets/numbers) */
-ul,
-ol,
-menu,
-* li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/*
-  - Remove default hyperlink styles
-  - Inherit font styles for consistency
-*/
-a {
-  text-decoration: none;
-  color: inherit;
-  font: inherit;
-}
-
-/* 
-  - Remove default outline styles 
-  - Inherit font styles for consistency
-*/
-button,
-input,
-textarea,
-select {
-  outline: none;
-  border: none;
-  font: inherit;
-  color: inherit;
-}
-
-/* Set the default button behavior */
-button {
-  cursor: pointer;
-  background-color: transparent;
-  padding: 0;
-}
-
-body {
+@layer base {
+  body {
     background-color: #0066ff;
     background: radial-gradient(circle,rgba(87, 199, 133, 1) 0%, rgba(42, 123, 155, 1) 76%);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    color: #fff;
+    font-family: "Cal Sans", sans-serif;
+  }
 
-main {
+  main {
     padding: .5rem;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     align-items: center;
+  }
+
+  h1 {
+      font-size: 4rem;
+      letter-spacing: .45rem;
+      text-align: center;
+  }
 }
 
-h1 {
-    font-size: 4rem;
-    font-family: "Barlow Semi Condensed", Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: .15rem;
-    color: #fff;
-    text-align: center;
+@layer components {
+
+  .keyboard {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .key {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    font-size: 2rem;
+    font-family: "Leckerli One", cursive;
+    background-color: #fff;
+    color: #555;
+    border-radius: .25rem;
+    padding: .75rem 1.25rem;
+
+    .note {
+      font-size: 1rem;
+    }
+
+    &:active {
+      scale: 1.01;
+      box-shadow: 2px 2px 5px #666;
+    }
+  }
 }
